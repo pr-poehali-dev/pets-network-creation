@@ -1,11 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { Sidebar } from '@/components/layout/Sidebar';
+import { NewsFeed } from '@/components/feed/NewsFeed';
+import { ActivityTracker } from '@/components/activity/ActivityTracker';
+import { PetProfile } from '@/components/profile/PetProfile';
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState<'feed' | 'activity' | 'profile'>('feed');
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-orange-50 to-amber-50">
+      <div className="flex">
+        <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+        
+        <main className="flex-1 p-6">
+          {activeTab === 'feed' && <NewsFeed />}
+          {activeTab === 'activity' && <ActivityTracker />}
+          {activeTab === 'profile' && <PetProfile />}
+        </main>
       </div>
     </div>
   );
