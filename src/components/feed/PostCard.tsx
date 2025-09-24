@@ -68,12 +68,28 @@ export const PostCard = ({ post }: PostCardProps) => {
           </div>
         )}
 
-        <div className="rounded-xl overflow-hidden">
-          <img
-            src={post.image}
-            alt="Фото питомца"
-            className="w-full h-64 object-cover"
-          />
+        <div className="grid grid-cols-2 gap-2 rounded-xl overflow-hidden">
+          <div className="col-span-2">
+            <img
+              src="/img/bed7aa54-7122-4b7d-9fc2-54ec56d99695.jpg"
+              alt="Макс плавает в озере"
+              className="w-full h-64 object-cover"
+            />
+          </div>
+          <div>
+            <img
+              src="/img/2476fd6e-5233-4e72-b5de-0fa454193a78.jpg"
+              alt="Макс после купания"
+              className="w-full h-32 object-cover"
+            />
+          </div>
+          <div>
+            <img
+              src="/img/e76e0f65-3b29-4f39-a926-8013a8ffc100.jpg"
+              alt="Макс играет в воде"
+              className="w-full h-32 object-cover"
+            />
+          </div>
         </div>
 
         <div className="flex items-center justify-between pt-2">
